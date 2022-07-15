@@ -1,9 +1,12 @@
-import { combineReducers, createStore } from 'redux'
-import { personsReducer } from './reducers/personsReducer'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import personsReducer from './reducers/personsReducer'
+import mainReducer from './reducers/mainReducer'
+import { configureStore } from '@reduxjs/toolkit'
 
-const rootReducer = combineReducers({
+const rootReducer = {
+	main: mainReducer,
 	persons: personsReducer,
-})
+}
 
-export const store = createStore(rootReducer, composeWithDevTools())
+export const store = configureStore({
+	reducer: rootReducer,
+})

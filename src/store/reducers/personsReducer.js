@@ -1,4 +1,6 @@
-const INITIAL_STATE = {
+import { createSlice, current } from '@reduxjs/toolkit'
+
+const initialState = {
 	persons: [
 		{
 			id: 1,
@@ -39,22 +41,24 @@ const INITIAL_STATE = {
 	],
 }
 
-const changePersonSalary = (state, { personId, newSalary }) => {
-	const newPersons = [...state.persons]
-	const index = newPersons.findIndex((el) => el.id === personId)
-	newPersons[index].salary = newSalary
+const changePersonSalary = (state, { payload: { personId, newSalary } }) => {
+	const tempPersons = JSON.parse(JSON.stringify(current(state.persons)))
+	const index = tempPersons.findIndex((el) => el.id === personId)
+	tempPersons[index].salary = newSalary
 
-	return {
-		...state,
-		persons: [...newPersons],
-	}
+	state.persons = [...tempPersons]
 }
 
-export const personsReducer = (state = INITIAL_STATE, action) => {
-	switch (action.type) {
-		case 'CHANGE_SALARY_RANDOMLY':
-			return changePersonSalary(state, action.payload)
-		default:
-			return state
-	}
-}
+export const personsSlice = createSlice({
+	name: 'persons',
+	initialState,
+	reducers: {
+		changeSalaryRandomly: (state, payload) => {
+			changePersonSalary(state, payload)
+		},
+	},
+})
+
+export const { changeSalaryRandomly } = personsSlice.actions
+
+export default personsSlice.reducer

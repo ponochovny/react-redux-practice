@@ -21,15 +21,15 @@
 		width: 25%;
 		display: flex;
 
-		&.left {
-			justify-content: flex-end;
-		}
+		// &.left {
+		// 	justify-content: flex-end;
+		// }
 		&.right {
 			justify-content: flex-start;
 		}
 	}
 	&__content {
-		width: 50%;
+		width: 75%;
 		display: flex;
 		justify-content: center;
 		padding: 0 40px;
@@ -60,49 +60,6 @@
 		font-size: 14px;
 		margin-bottom: 16px;
 	}
-
-	button {
-		width: 100%;
-
-		// background-color: #EA4C89;
-		background-color: #4c96ea;
-		border-radius: 8px;
-		border-style: none;
-		box-sizing: border-box;
-		color: #ffffff;
-		cursor: pointer;
-		display: inline-block;
-		font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial,
-			sans-serif;
-		font-size: 14px;
-		font-weight: 500;
-		line-height: 20px;
-		list-style: none;
-		margin: 0;
-		outline: none;
-		padding: 10px 16px;
-		position: relative;
-		text-align: center;
-		text-decoration: none;
-		transition: color 100ms;
-		vertical-align: baseline;
-		user-select: none;
-		-webkit-user-select: none;
-		touch-action: manipulation;
-
-		margin-bottom: 4px;
-
-		transition: background-color 0.35s ease;
-
-		&:hover:enabled {
-			// background-color: #F082AC;
-			background-color: #82b0f0;
-		}
-		&:disabled {
-			cursor: default;
-			background-color: #4c96ea91;
-		}
-	}
 }
 
 .person {
@@ -120,7 +77,7 @@
 		display: flex;
 		flex-direction: column;
 		padding: 0 15px;
-		width: calc(100% - 100px);
+		width: calc(100% - 250px);
 	}
 	&__name {
 		font-weight: bold;
@@ -132,5 +89,14 @@
 	}
 	&__salary {
 		font-size: 24px;
+	}
+	&__controls {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-start;
+		width: 150px;
+		button {
+			width: auto;
+		}
 	}
 }
