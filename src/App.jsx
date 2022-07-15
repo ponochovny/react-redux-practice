@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 function App() {
 	const dispatch = useDispatch()
-	const persons = useSelector((state) => state.persons)
+	const persons = useSelector((state) => state.persons.persons)
 
 	const randomIntFromInterval = (min, max) => {
 		// min and max included
