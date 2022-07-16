@@ -9,7 +9,6 @@ export const mainSlice = createSlice({
 	initialState,
 	reducers: {
 		modalState: (state, payload) => {
-			console.log('modalState', payload)
 			state.isModalOpened = payload.payload.value
 		},
 	},

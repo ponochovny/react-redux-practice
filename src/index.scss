@@ -33,6 +33,11 @@ code {
 		outline: none;
 		padding: 0 10px;
 	}
+	&__textarea {
+		min-height: 88px;
+		font-family: inherit;
+		padding-top: 8px;
+	}
 }
 
 button {
