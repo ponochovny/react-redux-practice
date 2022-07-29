@@ -1,9 +1,10 @@
+import { memo } from 'react'
 import { useDispatch } from 'react-redux'
-import { modalState } from '../../store/reducers/mainReducer'
-import { setPersonDataToChange } from '../../store/reducers/personsReducer'
+import { modalState } from '../../store/reducers/mainSlice'
+import { setPersonDataToChange } from '../../store/reducers/personsSlice'
 import './index.scss'
 
-const Person = ({ data: person }) => {
+const Person = memo(({ data: person }) => {
 	const dispatch = useDispatch()
 
 	const setDataToChange = () => {
@@ -29,6 +30,6 @@ const Person = ({ data: person }) => {
 			</div>
 		</div>
 	)
-}
+})
 
 export default Person

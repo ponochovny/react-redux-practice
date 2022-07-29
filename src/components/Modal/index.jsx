@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { modalState } from '../../store/reducers/mainReducer'
+import { modalState } from '../../store/reducers/mainSlice'
 import {
 	changePersonData,
 	clearPersonDataToChange,
-} from '../../store/reducers/personsReducer'
+} from '../../store/reducers/personsSlice'
 import './index.scss'
 
 function Modal({ isActive }) {

@@ -1,5 +1,5 @@
-import personsReducer from './reducers/personsReducer'
-import mainReducer from './reducers/mainReducer'
+import personsReducer from './reducers/personsSlice'
+import mainReducer from './reducers/mainSlice'
 import { configureStore } from '@reduxjs/toolkit'
 
 const rootReducer = {

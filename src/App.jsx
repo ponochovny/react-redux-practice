@@ -1,6 +1,6 @@
 import './App.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeRandomPersonSalary } from './store/reducers/personsReducer'
+import { changeRandomPersonSalary } from './store/reducers/personsSlice'
 import Modal from './components/Modal'
 import Person from './components/Person'
 
