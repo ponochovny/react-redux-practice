@@ -1,18 +1,12 @@
 import './App.scss'
-import { useDispatch, useSelector } from 'react-redux'
-import { changeRandomPersonSalary } from './store/reducers/personsSlice'
+import { useSelector } from 'react-redux'
 import Modal from './components/Modal'
 import Person from './components/Person'
+import ChangePerson from './components/Controls/ChangePerson'
 
 function App() {
-	const dispatch = useDispatch()
 	const persons = useSelector((state) => state.persons.persons)
 	const isModalOpened = useSelector((state) => state.main.isModalOpened)
-
-	const randomIntFromInterval = (min, max) => {
-		// min and max included
-		return Math.floor(Math.random() * (max - min + 1) + min)
-	}
 
 	return (
 		<>
@@ -41,18 +35,8 @@ function App() {
 						<div className='block'>
 							<div className='block__title'>Controls</div>
 							<div className='block__content'>
-								<button disabled>Add person</button>
-								<button
-									onClick={() =>
-										dispatch(
-											changeRandomPersonSalary({
-												newSalary: randomIntFromInterval(300, 2500),
-											})
-										)
-									}
-								>
-									Change salary
-								</button>
+								<ChangePerson val='1' />
+								<ChangePerson val='2' />
 							</div>
 						</div>
 					</div>
